@@ -1,4 +1,7 @@
-import java.util.*;
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.List;
+import java.util.Random;
 
 public class Main {
     public static void main(String[] args) {
@@ -71,11 +74,29 @@ public class Main {
         Main.secondFunction(firstList);
 
         System.out.println("-------------------------- PARTE 3 -----------------------------");
-        
+
         Main.thirdFunction(firstList, false);
+
+//        System.out.println("-------------------------- ES3 -----------------------------");
+//
+//        Persona persona1 = new Persona("jacopo");
+//        Persona persona2 = new Persona("asdrubale");
+//        Persona persona3 = new Persona("gigi");
+//
+//        Map<Persona, String> rubrica = new HashMap<>();
+//        rubrica.put(persona1, "+391111111");
+//        rubrica.put(persona2, "+39111112222");
+//        rubrica.put(persona3, "+391345678");
+//
+//        System.out.println(rubrica);
+//
+//        rubrica.remove(persona2);
+//
+//        System.out.println(rubrica);
 
 
     }
+
 
     public static void secondFunction(List<Integer> lista) {
         List<Integer> secondList = new ArrayList<>();
@@ -88,22 +109,29 @@ public class Main {
     }
 
     public static void thirdFunction(List<Integer> lista, boolean trueOrFalse) {
-        Iterator<Integer> iterator = lista.iterator();
-
-        while (iterator.hasNext()) {
-            int num = iterator.next();
-            if (trueOrFalse && num % 2 == 1) {
-                iterator.remove();
-
-
-            } else if (!trueOrFalse && num % 2 == 0) {
-                iterator.remove();
-
-
+        for (int i = 0; i < lista.size(); i++) {
+            if (trueOrFalse && i % 2 == 0) System.out.println("POSIZIONE PARI " + i + ": " + lista.get(i));
+            else if (!trueOrFalse && i % 2 != 0) {
+                System.out.println("POSIZIONE DISPARI " + i + ": " + lista.get(i));
             }
+
         }
-        System.out.println("cambiando il booleano abbiamo un risultato differente");
-        System.out.println(lista);
+//        Iterator<Integer> iterator = lista.iterator();
+//
+//        while (iterator.hasNext()) {
+//            int num = iterator.next();
+//            if (trueOrFalse && num % 2 == 1) {
+//                iterator.remove();
+//
+//
+//            } else if (!trueOrFalse && num % 2 == 0) {
+//                iterator.remove();
+//
+//
+//            }
+//        }
+//        System.out.println("cambiando il booleano abbiamo un risultato differente");
+//        System.out.println(lista);
 
     }
 
